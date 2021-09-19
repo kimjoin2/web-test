@@ -1,0 +1,14 @@
+{
+  "base_url": "http://localhost",
+  "test_cases": [
+    {
+      "path": "/api/v1",
+      "headers": [
+        {
+          "key": "auth-key",
+          "value": "1234"
+        }
+      ]
+    }
+  ]
+}
