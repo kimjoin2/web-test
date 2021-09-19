@@ -6,15 +6,15 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"web-test/informat"
+	"web-test/configFormat"
 )
 
 func main() {
-	configFilePath := flag.String("f", "", "informat file path")
+	configFilePath := flag.String("f", "", "configFormat file path")
 	flag.Parse()
 
 	if *configFilePath == "" {
-		fmt.Println("need to set informat file with -f option")
+		fmt.Println("need to set configFormat file with -f option")
 		os.Exit(1)
 	}
 
@@ -31,10 +31,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	var config informat.TestConfig
+	var config configFormat.TestConfig
 	e = json.Unmarshal(byteValue, &config)
 	if e != nil {
-		fmt.Printf("informat informat error : %s\n%s", *configFilePath, e.Error())
+		fmt.Printf("configFormat configFormat error : %s\n%s", *configFilePath, e.Error())
 		os.Exit(1)
 	}
 

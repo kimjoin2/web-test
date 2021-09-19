@@ -1,4 +1,4 @@
-package informat
+package configFormat
 
 type TestConfig struct {
 	BaseUrl string `json:"base_url"`
