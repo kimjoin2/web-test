@@ -6,11 +6,16 @@ type TestConfig struct {
 }
 
 type TestCase struct {
+	RequestData      RequestData    `json:"request_data"`
+	ExpectedResponse ExpectResponse `json:"expected_response"`
+}
+
+type RequestData struct {
 	Headers []Header `json:"headers"`
 	Path string `json:"path"`
 	Method string `json:"method"`
-	RequestBody string `json:"request_body"`
-	ExpectResponse ExpectResponse `json:"expect_response"`
+	Body string `json:"body"`
+	ContentType string `json:"content_type"`
 }
 
 type Header struct {

@@ -1,14 +1,33 @@
 {
-  "base_url": "http://localhost",
+  "base_url": "http://127.0.0.1:8118",
   "test_cases": [
+
     {
-      "path": "/api/v1",
-      "headers": [
-        {
-          "key": "auth-key",
-          "value": "1234"
-        }
-      ]
+      "request_data": {
+        "method": "get",
+        "path": "/for/template",
+        "body": "",
+        "content_type": "",
+        "headers": [
+          {"key": "Auth-code", "value": "code"}
+        ]
+      },
+      "expected_response": {
+        "code": 404,
+        "body": "",
+        "headers": [
+          {"key": "", "value": ""}
+        ]
+      }
+    },
+    {
+      "request_data": {
+        "method": "get",
+        "path": "/"
+      },
+      "expected_response": {
+        "code": 200
+      }
     }
   ]
 }
